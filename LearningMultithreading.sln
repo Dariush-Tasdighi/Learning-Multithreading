@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learn 1 - ThreadStart", "Learn 1 - ThreadStart", "{10D8688B-9263-45E7-BDFF-4C6FF3A64D34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Learn_0100\Application\Application.csproj", "{F0C2CB49-57B4-453D-B381-C4B456D584AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AED272FB-E958-434B-BE03-6596F5C5D688}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\ReadMe.docx = Docs\ReadMe.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learn 2 - Join", "Learn 2 - Join", "{F8E13984-C401-49A9-8916-2E44CF1C0F1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Learn_0200\Application\Application.csproj", "{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learn 3 - Make Shared Resource Thread Safe", "Learn 3 - Make Shared Resource Thread Safe", "{8FEC4AB1-028E-431D-8FA6-932996B567A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Learn_0300\Application\Application.csproj", "{039CD678-19DA-4229-8D13-8B49BEA14EC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0C2CB49-57B4-453D-B381-C4B456D584AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C2CB49-57B4-453D-B381-C4B456D584AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C2CB49-57B4-453D-B381-C4B456D584AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C2CB49-57B4-453D-B381-C4B456D584AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039CD678-19DA-4229-8D13-8B49BEA14EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039CD678-19DA-4229-8D13-8B49BEA14EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039CD678-19DA-4229-8D13-8B49BEA14EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039CD678-19DA-4229-8D13-8B49BEA14EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0C2CB49-57B4-453D-B381-C4B456D584AE} = {10D8688B-9263-45E7-BDFF-4C6FF3A64D34}
+		{0B0F163D-97CC-49BB-A1DB-DFFCC22AF2AD} = {F8E13984-C401-49A9-8916-2E44CF1C0F1F}
+		{039CD678-19DA-4229-8D13-8B49BEA14EC4} = {8FEC4AB1-028E-431D-8FA6-932996B567A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71BF3A44-5B6A-4B3F-9FD9-D62DDE5DA53C}
+	EndGlobalSection
+EndGlobal
