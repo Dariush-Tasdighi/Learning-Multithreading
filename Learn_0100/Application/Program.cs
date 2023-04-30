@@ -1,52 +1,52 @@
 ﻿// **************************************************
 // *** Step (1) *************************************
 // **************************************************
-//namespace Application;
+namespace Application;
 
-//internal static class Program : object
-//{
-//	static Program()
-//	{
-//	}
+internal static class Program : object
+{
+	static Program()
+	{
+	}
 
-//	/// <summary>
-//	/// Single Thread Application
-//	/// </summary>
-//	private static void Main()
-//	{
-//		//System.Threading.Thread currentThread =
-//		//	System.Threading.Thread.CurrentThread;
+	/// <summary>
+	/// Single Thread Application
+	/// </summary>
+	private static void Main()
+	{
+		//System.Threading.Thread currentThread =
+		//	System.Threading.Thread.CurrentThread;
 
-//		var currentThread =
-//			System.Threading.Thread.CurrentThread;
+		var currentThread =
+			System.Threading.Thread.CurrentThread;
 
-//		System.Console.WriteLine
-//			(value: $"Thread Name: {currentThread.Name}");
+		System.Console.WriteLine
+			(value: $"Thread Name: {currentThread.Name}");
 
-//		currentThread.Name = "Main Thread";
+		currentThread.Name = "Main Thread";
 
-//		System.Console.WriteLine
-//			(value: $"Thread Name: {currentThread.Name}");
+		System.Console.WriteLine
+			(value: $"Thread Name: {currentThread.Name}");
 
-//		System.Console.WriteLine
-//			(value: $"Alive: {currentThread.IsAlive}");
+		System.Console.WriteLine
+			(value: $"Alive: {currentThread.IsAlive}");
 
-//		System.Console.WriteLine
-//			(value: $"Priority: {currentThread.Priority}");
+		System.Console.WriteLine
+			(value: $"Priority: {currentThread.Priority}");
 
-//		//switch(currentThread.Priority)
-//		//{
-//		//	case System.Threading.ThreadPriority.Lowest:
-//		//	case System.Threading.ThreadPriority.BelowNormal:
-//		//	case System.Threading.ThreadPriority.Normal: // Default
-//		//	case System.Threading.ThreadPriority.AboveNormal:
-//		//	case System.Threading.ThreadPriority.Highest:
-//		//}
+		//switch(currentThread.Priority)
+		//{
+		//	case System.Threading.ThreadPriority.Lowest:
+		//	case System.Threading.ThreadPriority.BelowNormal:
+		//	case System.Threading.ThreadPriority.Normal: // Default
+		//	case System.Threading.ThreadPriority.AboveNormal:
+		//	case System.Threading.ThreadPriority.Highest:
+		//}
 
-//		System.Console.WriteLine
-//			(value: $"ManagedThreadId: {currentThread.ManagedThreadId}");
-//	}
-//}
+		System.Console.WriteLine
+			(value: $"ManagedThreadId: {currentThread.ManagedThreadId}");
+	}
+}
 // **************************************************
 // *** /Step (1) ************************************
 // **************************************************
@@ -596,86 +596,86 @@
 // *** Retrieving data from Thread function       ***
 // *** using callback method                      ***
 // **************************************************
-namespace Application;
+//namespace Application;
 
-// First: Define Delegate
-public delegate void TheSumOfNumbersCallback(int sum);
+//// First: Define Delegate
+//public delegate void TheSumOfNumbersCallback(int sum);
 
-internal static class Program : object
-{
-	static Program()
-	{
-	}
+//internal static class Program : object
+//{
+//	static Program()
+//	{
+//	}
 
-	private static void Main()
-	{
-		System.Console.WriteLine
-			(value: $"Main Thread Started");
+//	private static void Main()
+//	{
+//		System.Console.WriteLine
+//			(value: $"Main Thread Started");
 
-		// Seventh: Define a variable from callback delegate and assign
-		TheSumOfNumbersCallback callback = DisplaySumOfNumbers;
+//		// Seventh: Define a variable from callback delegate and assign
+//		TheSumOfNumbersCallback callback = DisplaySumOfNumbers;
 
-		var instance = new CalculateSumHelper
-			(maxNumber: 10, callback: callback);
+//		var instance = new CalculateSumHelper
+//			(maxNumber: 10, callback: callback);
 
-		var myThreadStart = new System
-			.Threading.ThreadStart(instance.CalculateSum);
+//		var myThreadStart = new System
+//			.Threading.ThreadStart(instance.CalculateSum);
 
-		var myThread = new System
-			.Threading.Thread(start: myThreadStart);
+//		var myThread = new System
+//			.Threading.Thread(start: myThreadStart);
 
-		myThread.Start();
+//		myThread.Start();
 
-		System.Console.WriteLine
-			(value: $"Main Thread Completed");
-	}
+//		System.Console.WriteLine
+//			(value: $"Main Thread Completed");
+//	}
 
-	/// <summary>
-	/// Sixth: Define the favorite function (method)
-	/// </summary>
-	private static void DisplaySumOfNumbers(int sum)
-	{
-		System.Console.WriteLine
-			(value: $"The sum of numbers is {sum}.");
-	}
-}
+//	/// <summary>
+//	/// Sixth: Define the favorite function (method)
+//	/// </summary>
+//	private static void DisplaySumOfNumbers(int sum)
+//	{
+//		System.Console.WriteLine
+//			(value: $"The sum of numbers is {sum}.");
+//	}
+//}
 
-public class CalculateSumHelper : object
-{
-	// Third: Inject callback delegate to constructor
-	public CalculateSumHelper(int maxNumber,
-		TheSumOfNumbersCallback? callback) : base()
-	{
-		MaxNumber = maxNumber;
+//public class CalculateSumHelper : object
+//{
+//	// Third: Inject callback delegate to constructor
+//	public CalculateSumHelper(int maxNumber,
+//		TheSumOfNumbersCallback? callback) : base()
+//	{
+//		MaxNumber = maxNumber;
 
-		// Forth: Assign injected parameter to property
-		Callback = callback;
-	}
+//		// Forth: Assign injected parameter to property
+//		Callback = callback;
+//	}
 
-	private int MaxNumber { get; init; }
+//	private int MaxNumber { get; init; }
 
-	// Second: Defint a variable. It is better it be nullable
-	private TheSumOfNumbersCallback? Callback { get; init; }
+//	// Second: Defint a variable. It is better it be nullable
+//	private TheSumOfNumbersCallback? Callback { get; init; }
 
-	public void CalculateSum()
-	{
-		var sum = 0;
+//	public void CalculateSum()
+//	{
+//		var sum = 0;
 
-		for (var index = 1; index <= MaxNumber; index++)
-		{
-			sum += index;
-		}
+//		for (var index = 1; index <= MaxNumber; index++)
+//		{
+//			sum += index;
+//		}
 
-		System.Threading.Thread.Sleep
-			(millisecondsTimeout: 10_000);
+//		System.Threading.Thread.Sleep
+//			(millisecondsTimeout: 10_000);
 
-		// Fifth: Callback
-		if (Callback is not null)
-		{
-			Callback(sum: sum);
-		}
-	}
-}
+//		// Fifth: Callback
+//		if (Callback is not null)
+//		{
+//			Callback(sum: sum);
+//		}
+//	}
+//}
 // **************************************************
 // *** /Step (9) ************************************
 // **************************************************

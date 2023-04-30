@@ -1,49 +1,49 @@
 ﻿// **************************************************
 // *** Step (1) *************************************
 // **************************************************
-//namespace Application;
+namespace Application;
 
-//internal static class Program : object
-//{
-//	/// <summary>
-//	/// Shared Resource
-//	/// </summary>
-//	private static int Counter = 0;
+internal static class Program : object
+{
+	/// <summary>
+	/// Shared Resource
+	/// </summary>
+	private static int Counter = 0;
 
-//	static Program()
-//	{
-//	}
+	static Program()
+	{
+	}
 
-//	private static void Main()
-//	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution started");
+	private static void Main()
+	{
+		System.Console.WriteLine
+			(value: $"{nameof(Main)} method execution started");
 
-//		MyMethod();
-//		MyMethod();
-//		MyMethod();
+		MyMethod();
+		MyMethod();
+		MyMethod();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+		System.Console.WriteLine
+			(value: $"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution completed");
-//	}
+		System.Console.WriteLine
+			(value: $"{nameof(Main)} method execution completed");
+	}
 
-//	private static void MyMethod()
-//	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(MyMethod)} method execution started");
+	private static void MyMethod()
+	{
+		System.Console.WriteLine
+			(value: $"{nameof(MyMethod)} method execution started");
 
-//		for (var index = 1; index <= 5000; index++)
-//		{
-//			Counter++;
-//		}
+		for (var index = 1; index <= 5000; index++)
+		{
+			Counter++;
+		}
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(MyMethod)} method execution completed");
-//	}
-//}
+		System.Console.WriteLine
+			(value: $"{nameof(MyMethod)} method execution completed");
+	}
+}
 // **************************************************
 // *** /Step (1) ************************************
 // **************************************************
@@ -713,61 +713,61 @@
 // Advanced Topic:
 //		ManualResetEvent
 // **************************************************
-namespace Application;
+//namespace Application;
 
-internal static class Program : object
-{
-	static Program()
-	{
-		ManualResetEvent = new System.Threading
-			.ManualResetEvent(initialState: false);
-	}
+//internal static class Program : object
+//{
+//	static Program()
+//	{
+//		ManualResetEvent = new System.Threading
+//			.ManualResetEvent(initialState: false);
+//	}
 
-	private static System.Threading.ManualResetEvent ManualResetEvent { get; }
+//	private static System.Threading.ManualResetEvent ManualResetEvent { get; }
 
-	private static void Main()
-	{
-		var writeThread = new System
-			.Threading.Thread(start: Write);
+//	private static void Main()
+//	{
+//		var writeThread = new System
+//			.Threading.Thread(start: Write);
 
-		writeThread.Start();
+//		writeThread.Start();
 
-		for (var index = 0; index <= 5; index++)
-		{
-			new System.Threading.Thread(start: Read).Start();
-		}
-	}
+//		for (var index = 0; index <= 5; index++)
+//		{
+//			new System.Threading.Thread(start: Read).Start();
+//		}
+//	}
 
-	private static void Write()
-	{
-		System.Console.WriteLine
-			(value: $"{nameof(Write)} method execution started");
+//	private static void Write()
+//	{
+//		System.Console.WriteLine
+//			(value: $"{nameof(Write)} method execution started");
 
-		ManualResetEvent.Reset(); // initialState: false
+//		ManualResetEvent.Reset(); // initialState: false
 
-		// Writing to the File...
-		System.Threading.Thread.Sleep
-			(millisecondsTimeout: 2_000);
+//		// Writing to the File...
+//		System.Threading.Thread.Sleep
+//			(millisecondsTimeout: 2_000);
 
-		System.Console.WriteLine
-			(value: $"{nameof(Write)} method execution completed");
+//		System.Console.WriteLine
+//			(value: $"{nameof(Write)} method execution completed");
 
-		ManualResetEvent.Set(); // initialState: true
-	}
+//		ManualResetEvent.Set(); // initialState: true
+//	}
 
-	private static void Read()
-	{
-		System.Console.WriteLine
-			(value: $"{nameof(Read)} method wait...");
+//	private static void Read()
+//	{
+//		System.Console.WriteLine
+//			(value: $"{nameof(Read)} method wait...");
 
-		ManualResetEvent.WaitOne();
+//		ManualResetEvent.WaitOne();
 
-		// Reading from the File...
+//		// Reading from the File...
 
-		System.Console.WriteLine
-			(value: $"{nameof(Read)} method execution completed");
-	}
-}
+//		System.Console.WriteLine
+//			(value: $"{nameof(Read)} method execution completed");
+//	}
+//}
 // **************************************************
 // *** /Step (8) ************************************
 // **************************************************
