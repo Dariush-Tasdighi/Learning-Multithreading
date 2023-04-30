@@ -1,49 +1,49 @@
 ﻿// **************************************************
 // *** Step (1) *************************************
 // **************************************************
-namespace Application;
+//namespace Application;
 
-internal static class Program : object
-{
-	/// <summary>
-	/// Shared Resource
-	/// </summary>
-	private static int Counter = 0;
+//internal static class Program : object
+//{
+//	/// <summary>
+//	/// Shared Resource
+//	/// </summary>
+//	private static int Counter = 0;
 
-	static Program()
-	{
-	}
+//	static Program()
+//	{
+//	}
 
-	private static void Main()
-	{
-		System.Console.WriteLine
-			(value: $"{nameof(Main)} method execution started");
+//	private static void Main()
+//	{
+//		System.Console.WriteLine
+//			(value: $"{nameof(Main)} method execution started");
 
-		MyMethod();
-		MyMethod();
-		MyMethod();
+//		MyMethod();
+//		MyMethod();
+//		MyMethod();
 
-		System.Console.WriteLine
-			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine
+//			(value: $"{nameof(Counter)}: {Counter}");
 
-		System.Console.WriteLine
-			(value: $"{nameof(Main)} method execution completed");
-	}
+//		System.Console.WriteLine
+//			(value: $"{nameof(Main)} method execution completed");
+//	}
 
-	private static void MyMethod()
-	{
-		System.Console.WriteLine
-			(value: $"{nameof(MyMethod)} method execution started");
+//	private static void MyMethod()
+//	{
+//		System.Console.WriteLine
+//			(value: $"{nameof(MyMethod)} method execution started");
 
-		for (var index = 1; index <= 5000; index++)
-		{
-			Counter++;
-		}
+//		for (var index = 1; index <= 5_000_000; index++)
+//		{
+//			Counter++;
+//		}
 
-		System.Console.WriteLine
-			(value: $"{nameof(MyMethod)} method execution completed");
-	}
-}
+//		System.Console.WriteLine
+//			(value: $"{nameof(MyMethod)} method execution completed");
+//	}
+//}
 // **************************************************
 // *** /Step (1) ************************************
 // **************************************************
@@ -120,8 +120,6 @@ internal static class Program : object
 // System.Threading.Interlocked.Increment         ***
 // ...                                            ***
 // **************************************************
-//using System.Text.RegularExpressions;
-
 //namespace Application;
 
 //internal static class Program : object
@@ -206,7 +204,7 @@ internal static class Program : object
 //	/// <summary>
 //	/// Lock or lockObject or LockedObject
 //	/// </summary>
-//	public static object LockedObject = new object();
+//	public static object LockedObject = new();
 
 //	static Program()
 //	{
@@ -272,15 +270,9 @@ internal static class Program : object
 
 //internal static class Program : object
 //{
-//	/// <summary>
-//	/// Shared Resource
-//	/// </summary>
 //	private static int Counter = 0;
 
-//	/// <summary>
-//	/// Lock or lockObject or LockedObject
-//	/// </summary>
-//	public static object LockedObject = new object();
+//	public static object LockedObject = new();
 
 //	static Program()
 //	{
@@ -288,8 +280,8 @@ internal static class Program : object
 
 //	private static void Main()
 //	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution started");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Main)} method execution started");
 
 //		var thread1 = new System
 //			.Threading.Thread(start: MyMethod);
@@ -309,20 +301,30 @@ internal static class Program : object
 //		thread3.Join();
 
 //		// حال پاسخ درستی دریافت می‌کنیم
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution completed");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Main)} method execution completed");
 //	}
 
 //	private static void MyMethod()
 //	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(MyMethod)} method execution started");
+//		System.Console.WriteLine(value:
+//			$"{nameof(MyMethod)} method execution started");
 
 //		for (var index = 1; index <= 5_000_000; index++)
 //		{
+//			// **************************************************
+//			//System.Threading.Monitor
+//			//	.Enter(obj: LockedObject);
+
+//			//Counter++;
+
+//			//System.Threading.Monitor
+//			//	.Exit(obj: LockedObject);
+//			// **************************************************
+
 //			// **************************************************
 //			System.Threading.Monitor
 //				.Enter(obj: LockedObject);
@@ -359,8 +361,8 @@ internal static class Program : object
 //			// **************************************************
 //		}
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(MyMethod)} method execution completed");
+//		System.Console.WriteLine(value:
+//			$"{nameof(MyMethod)} method execution completed");
 //	}
 //}
 // **************************************************
@@ -384,12 +386,9 @@ internal static class Program : object
 
 //internal static class Program : object
 //{
-//	/// <summary>
-//	/// Shared Resource
-//	/// </summary>
 //	private static int Counter = 0;
 
-//	public static object LockedObject = new object();
+//	public static object LockedObject = new();
 
 //	static Program()
 //	{
@@ -424,13 +423,13 @@ internal static class Program : object
 
 //		stopwatch.Stop();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"With using: 'Interlocked' ->" +
+//		System.Console.WriteLine(value:
+//			$"With using: 'Interlocked' ->" +
 //			$"{System.Environment.NewLine}" +
-//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString("#,##0")}");
+//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString(format: "#,##0")}");
 //		// **************************************************
 //		// **************************************************
 //		// **************************************************
@@ -462,13 +461,13 @@ internal static class Program : object
 
 //		stopwatch.Stop();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"With using: 'lock()' ->" +
+//		System.Console.WriteLine(value:
+//			$"With using: 'lock()' ->" +
 //			$"{System.Environment.NewLine}" +
-//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString("#,##0")}");
+//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString(format: "#,##0")}");
 //		// **************************************************
 //		// **************************************************
 //		// **************************************************
@@ -500,13 +499,13 @@ internal static class Program : object
 
 //		stopwatch.Stop();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"With using: 'Monitor.Enter(): Type (1)' ->" +
+//		System.Console.WriteLine(value:
+//			$"With using: 'Monitor.Enter(): Type (1)' ->" +
 //			$"{System.Environment.NewLine}" +
-//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString("#,##0")}");
+//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString(format: "#,##0")}");
 //		// **************************************************
 //		// **************************************************
 //		// **************************************************
@@ -538,13 +537,13 @@ internal static class Program : object
 
 //		stopwatch.Stop();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Counter)}: {Counter}");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Counter)}: {Counter}");
 
-//		System.Console.WriteLine
-//			(value: $"With using: 'Monitor.Enter(): Type (2)' ->" +
+//		System.Console.WriteLine(value:
+//			$"With using: 'Monitor.Enter(): Type (2)' ->" +
 //			$"{System.Environment.NewLine}" +
-//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString("#,##0")}");
+//			$"{nameof(stopwatch.ElapsedTicks)}: {stopwatch.ElapsedTicks.ToString(format: "#,##0")}");
 //		// **************************************************
 //		// **************************************************
 //		// **************************************************
@@ -628,7 +627,7 @@ internal static class Program : object
 
 //internal static class Program : object
 //{
-//	public static object LockedObject = new object();
+//	public static object LockedObject = new();
 
 //	static Program()
 //	{
@@ -636,14 +635,14 @@ internal static class Program : object
 
 //	private static void Main()
 //	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution started");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Main)} method execution started");
 
 //		var thread1 = new System
-//			.Threading.Thread(start: Write);
+//			.Threading.Thread(start: Read);
 
 //		var thread2 = new System
-//			.Threading.Thread(start: Read);
+//			.Threading.Thread(start: Write);
 
 //		thread1.Start();
 //		thread2.Start();
@@ -651,14 +650,37 @@ internal static class Program : object
 //		thread1.Join();
 //		thread2.Join();
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Main)} method execution completed");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Main)} method execution completed");
+//	}
+//	private static void Read()
+//	{
+//		System.Console.WriteLine(value:
+//			$"{nameof(Read)} method execution started");
+
+//		System.Threading.Monitor
+//			.Enter(obj: LockedObject);
+
+//		for (var index = 1; index <= 5; index++)
+//		{
+//			System.Threading.Monitor
+//				.Pulse(obj: LockedObject);
+
+//			System.Console.WriteLine(value:
+//				$"{nameof(Read)} method: {index}");
+
+//			System.Threading.Monitor
+//				.Wait(obj: LockedObject);
+//		}
+
+//		System.Console.WriteLine(value:
+//			$"{nameof(Read)} method execution completed");
 //	}
 
 //	private static void Write()
 //	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Write)} method execution started");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Write)} method execution started");
 
 //		System.Threading.Monitor
 //			.Enter(obj: LockedObject);
@@ -668,39 +690,15 @@ internal static class Program : object
 //			System.Threading.Monitor
 //				.Pulse(obj: LockedObject);
 
-//			System.Console.WriteLine
-//				(value: $"{nameof(Write)} method: {index}");
+//			System.Console.WriteLine(value:
+//				$"{nameof(Write)} method: {index}");
 
 //			System.Threading.Monitor
 //				.Wait(obj: LockedObject);
 //		}
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Write)} method execution completed");
-//	}
-
-//	private static void Read()
-//	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Read)} method execution started");
-
-//		System.Threading.Monitor
-//			.Enter(obj: LockedObject);
-
-//		for (var index = 1; index <= 5; index++)
-//		{
-//			System.Threading.Monitor
-//				.Pulse(obj: LockedObject);
-
-//			System.Console.WriteLine
-//				(value: $"{nameof(Read)} method: {index}");
-
-//			System.Threading.Monitor
-//				.Wait(obj: LockedObject);
-//		}
-
-//		System.Console.WriteLine
-//			(value: $"{nameof(Read)} method execution completed");
+//		System.Console.WriteLine(value:
+//			$"{nameof(Write)} method execution completed");
 //	}
 //}
 // **************************************************
@@ -713,61 +711,60 @@ internal static class Program : object
 // Advanced Topic:
 //		ManualResetEvent
 // **************************************************
-//namespace Application;
+namespace Application;
 
-//internal static class Program : object
-//{
-//	static Program()
-//	{
-//		ManualResetEvent = new System.Threading
-//			.ManualResetEvent(initialState: false);
-//	}
+internal static class Program : object
+{
+	static Program()
+	{
+		ManualResetEvent = new System.Threading
+			.ManualResetEvent(initialState: false);
+	}
 
-//	private static System.Threading.ManualResetEvent ManualResetEvent { get; }
+	private static System.Threading.ManualResetEvent ManualResetEvent { get; }
 
-//	private static void Main()
-//	{
-//		var writeThread = new System
-//			.Threading.Thread(start: Write);
+	private static void Main()
+	{
+		var readThread = new System
+			.Threading.Thread(start: Read);
 
-//		writeThread.Start();
+		readThread.Start();
 
-//		for (var index = 0; index <= 5; index++)
-//		{
-//			new System.Threading.Thread(start: Read).Start();
-//		}
-//	}
+		for (var index = 1; index <= 5; index++)
+		{
+			new System.Threading.Thread(start: Write).Start();
+		}
+	}
+	private static void Read()
+	{
+		System.Console.WriteLine(value:
+			$"{nameof(Read)} method execution started");
 
-//	private static void Write()
-//	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Write)} method execution started");
+		ManualResetEvent.Reset(); // initialState: false
 
-//		ManualResetEvent.Reset(); // initialState: false
+		// Reading from File...
+		System.Threading.Thread.Sleep
+			(millisecondsTimeout: 2_000);
 
-//		// Writing to the File...
-//		System.Threading.Thread.Sleep
-//			(millisecondsTimeout: 2_000);
+		System.Console.WriteLine(value:
+			$"{nameof(Read)} method execution completed");
 
-//		System.Console.WriteLine
-//			(value: $"{nameof(Write)} method execution completed");
+		ManualResetEvent.Set(); // initialState: true
+	}
 
-//		ManualResetEvent.Set(); // initialState: true
-//	}
+	private static void Write()
+	{
+		System.Console.WriteLine(value:
+			$"{nameof(Write)} method wait...");
 
-//	private static void Read()
-//	{
-//		System.Console.WriteLine
-//			(value: $"{nameof(Read)} method wait...");
+		ManualResetEvent.WaitOne();
 
-//		ManualResetEvent.WaitOne();
+		// Writing to the File...
 
-//		// Reading from the File...
-
-//		System.Console.WriteLine
-//			(value: $"{nameof(Read)} method execution completed");
-//	}
-//}
+		System.Console.WriteLine(value:
+			$"{nameof(Write)} method execution completed");
+	}
+}
 // **************************************************
 // *** /Step (8) ************************************
 // **************************************************

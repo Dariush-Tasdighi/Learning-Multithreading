@@ -348,19 +348,19 @@ internal static class Program : object
 //		thread1.Start();
 
 //		// **************************************************
-//		// New
-//		thread1.Join(millisecondsTimeout: 2_000);
-
-//		System.Console.WriteLine
-//			(value: $"{nameof(thread1)} thread Is Alive: {thread1.IsAlive}");
-//		// **************************************************
-
-//		// **************************************************
 //		//// New
 //		//thread1.Join(millisecondsTimeout: 10_000);
 
 //		//System.Console.WriteLine
 //		//	(value: $"{nameof(thread1)} thread Is Alive: {thread1.IsAlive}");
+//		// **************************************************
+
+//		// **************************************************
+//		// New
+//		thread1.Join(millisecondsTimeout: 2_000);
+
+//		System.Console.WriteLine
+//			(value: $"{nameof(thread1)} thread Is Alive: {thread1.IsAlive}");
 //		// **************************************************
 
 //		var thread2 = new System
